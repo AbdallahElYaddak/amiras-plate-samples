@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex">
+</head>
+<body>
+<title>Amira's Plate Designs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lalezar&family=Almarai:wght@400;700;800&family=Readex+Pro:wght@300;400;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=Aref+Ruqaa:wght@400;700&family=Amiri:wght@400;700&display=swap">
+<style>
+/* Layout: a sticky chooser on top; below it one of three full mini-sites (A, B, C), all fed by one menu list and one shared basket.
+   Each design deliberately commits to its own single look, so colours are set explicitly per design rather than per theme. */
+:root{
+  color-scheme: light;
+  /* chooser chrome */
+  --ch-bg:#1d1a17; --ch-fg:#f7f2ea; --ch-mute:#b9b0a4; --ch-on:#ffc72c;
+  /* A: home kitchen — taken from the logo */
+  --a-red:#d3123e; --a-red-dk:#9e0c2d; --a-sun:#ffc72c; --a-cream:#fff6dc; --a-ink:#3a1d12; --a-card:#ffffff;
+  /* B: modern and clean */
+  --b-bg:#ffffff; --b-ink:#16130f; --b-mute:#6e6760; --b-line:#ece7e1; --b-soft:#f6f3ef; --b-red:#c8102e;
+  /* C: Egyptian traditional */
+  --c-night:#10363c; --c-night2:#0b2a2f; --c-gold:#d6a346; --c-gold-lt:#efd08f; --c-pom:#b3262f; --c-paper:#f4ead3; --c-ink:#2b1d10;
+  --f-a-disp:"Lalezar","Almarai",system-ui,sans-serif; --f-a-body:"Almarai",system-ui,sans-serif;
+  --f-b-disp:"Readex Pro","IBM Plex Sans Arabic",system-ui,sans-serif; --f-b-body:"IBM Plex Sans Arabic",system-ui,sans-serif;
+  --f-c-disp:"Aref Ruqaa","Amiri",serif; --f-c-body:"Amiri","Times New Roman",serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{background:var(--ch-bg);color:var(--ch-fg);font-family:var(--f-b-body);font-size:16px;line-height:1.7;padding-bottom:96px}
+button{font:inherit;cursor:pointer}
+:focus-visible{outline:3px solid #2b7fff;outline-offset:2px}
+img{display:block}
+[hidden]{display:none!important}
+
+/* ---------- chooser ---------- */
+.intro{padding-block:22px 6px;padding-inline:16px;max-width:980px;margin:0 auto}
+.intro h1{font-family:var(--f-b-disp);font-weight:600;font-size:1.35rem;margin:0 0 4px;text-wrap:balance}
+.intro p{margin:0;color:var(--ch-mute);font-size:.95rem;max-width:62ch}
+.chooser{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--ch-bg);padding-block:10px;padding-inline:16px;border-bottom:1px solid #35302a}
+.chooser-in{max-width:980px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.pick{background:#2a2621;color:var(--ch-fg);border:2px solid transparent;border-radius:12px;padding:8px 10px;text-align:right;display:flex;flex-direction:column;gap:0;min-width:0}
+.pick b{font-family:var(--f-b-disp);font-weight:600;font-size:1rem;line-height:1.4}
+.pick .ds{font-size:.78rem;color:var(--ch-mute);line-height:1.4}
+.pick[aria-pressed="true"]{border-color:var(--ch-on);background:#3a3127}
+.pick .sw{display:flex;gap:3px;margin-bottom:4px}
+.pick .sw i{width:14px;height:14px;border-radius:50%;display:block;border:1px solid #0003}
+.stage{max-width:1100px;margin:0 auto}
+.design{min-height:60vh}
+
+/* ---------- shared bits ---------- */
+.wrap{max-width:1040px;margin:0 auto;padding-inline:16px}
+.note{font-size:.8rem;opacity:.75}
+.qr-box{width:132px;height:132px;background:#fff;padding:8px;border-radius:10px;display:grid;place-items:center}
+.qr-box canvas,.qr-box img{width:116px!important;height:116px!important}
+.qr-ph{width:132px;height:132px;border:2px dashed currentColor;border-radius:10px;display:grid;place-items:center;text-align:center;font-size:.75rem;padding:8px;opacity:.7}
+.qrs{display:flex;gap:16px;flex-wrap:wrap}
+.qrs figure{margin:0;display:flex;flex-direction:column;gap:6px;align-items:center;font-size:.8rem}
+
+/* =================== A — مطبخ البيت =================== */
+.dA{background:var(--a-cream);color:var(--a-ink);font-family:var(--f-a-body)}
+.dA h2,.dA h3{font-family:var(--f-a-disp);font-weight:400;color:var(--a-red);margin:0;line-height:1.3;text-wrap:balance}
+.a-top{background:var(--a-red);color:#fff}
+.a-top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:10px;flex-wrap:wrap}
+.a-brand{display:flex;align-items:center;gap:10px;font-family:var(--f-a-disp);font-size:1.4rem}
+.a-brand img{width:44px;height:44px;border-radius:50%;background:#fff;object-fit:cover}
+.a-nav{display:flex;gap:16px;font-weight:700;font-size:.92rem;flex-wrap:wrap}
+.a-nav a{color:#fff;text-decoration:none}
+.a-hero{background:var(--a-sun);position:relative}
+.a-hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:center;padding-block:36px 64px}
+.a-hero h2{font-size:clamp(2.2rem,6vw,3.6rem);color:var(--a-red)}
+.a-hero p{font-size:1.08rem;margin:8px 0 18px;max-width:40ch}
+.a-hero-img{position:relative}
+.a-hero-img img{width:100%;max-width:420px;aspect-ratio:1;object-fit:cover;border-radius:50%;border:10px solid var(--a-red);margin-inline:auto}
+.a-stamp{position:absolute;bottom:4%;inset-inline-start:2%;background:var(--a-red);color:#fff;font-family:var(--f-a-disp);border-radius:50%;width:108px;height:108px;display:grid;place-items:center;text-align:center;line-height:1.2;transform:rotate(-10deg);font-size:1.05rem;border:4px dashed #ffffffa0}
+.a-wave{position:absolute;bottom:-1px;left:0;width:100%;height:40px;display:block}
+.a-btns{display:flex;gap:10px;flex-wrap:wrap}
+.a-btn{display:inline-flex;align-items:center;gap:8px;background:var(--a-red);color:#fff;text-decoration:none;font-weight:800;padding:12px 22px;border-radius:999px;border:0;box-shadow:0 4px 0 var(--a-red-dk)}
+.a-btn.alt{background:#fff;color:var(--a-red);box-shadow:0 4px 0 #e2b21e}
+.a-perks{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;padding-block:22px}
+.a-perk{background:var(--a-card);border-radius:18px;padding:14px;text-align:center;font-weight:700;font-size:.9rem;border:2px solid #f3d9a0}
+.a-perk i{font-style:normal;font-size:1.6rem;display:block}
+.a-sec{padding-block:26px}
+.a-sec>h2{font-size:2rem;margin-bottom:4px}
+.a-sub{margin:0 0 16px;opacity:.8}
+.a-offers{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+.a-offer{background:#fff;border:3px dashed var(--a-red);border-radius:22px;padding:18px;position:relative;display:flex;flex-direction:column;gap:6px}
+.a-offer h3{font-size:1.35rem;padding-inline-end:84px}
+.a-offer .pr{position:absolute;top:-14px;inset-inline-end:14px;background:var(--a-sun);color:var(--a-red);font-family:var(--f-a-disp);width:78px;height:78px;border-radius:50%;display:grid;place-items:center;font-size:1.5rem;line-height:1;transform:rotate(8deg);border:3px solid var(--a-red)}
+.a-offer .pr small{font-size:.8rem;display:block}
+.a-offer ul{margin:0;padding-inline-start:18px;font-size:.92rem}
+.a-offer .ex{font-size:.85rem;color:var(--a-red);font-weight:700}
+.a-offer .add-offer{margin-top:auto;align-self:flex-start}
+.a-chips{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;margin-bottom:10px;scrollbar-width:thin}
+.a-chips a{flex:none;background:#fff;color:var(--a-red);border:2px solid var(--a-red);border-radius:999px;padding:4px 14px;font-weight:700;text-decoration:none;font-size:.9rem}
+.a-cat{background:#fff;border-radius:24px;overflow:hidden;margin-bottom:18px;display:grid;grid-template-columns:240px 1fr;border:2px solid #f3d9a0}
+.a-cat-img{background:var(--a-sun);min-height:100%}
+.a-cat-img img{width:100%;height:100%;object-fit:cover;max-height:none}
+.a-cat-noimg{display:grid;place-items:center;font-size:3.2rem;background:var(--a-sun)}
+.a-cat-body{padding:16px 18px;min-width:0}
+.a-cat-body h3{font-size:1.6rem}
+.a-cat-body .a-sub{margin-bottom:8px;font-size:.9rem}
+.a-item{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px dashed #ecd7a8}
+.a-item:last-child{border-bottom:0}
+.a-item-t{flex:1;min-width:0}
+.a-item-t b{display:block;font-weight:700;line-height:1.45}
+.a-item-t small{opacity:.7}
+.a-price{font-family:var(--f-a-disp);color:var(--a-red);font-size:1.25rem;white-space:nowrap}
+.a-price i{font-style:normal;font-size:.8rem;margin-inline-start:2px}
+.a-add{flex:none;width:38px;height:38px;border-radius:50%;border:0;background:var(--a-red);color:#fff;font-size:1.4rem;line-height:1;box-shadow:0 3px 0 var(--a-red-dk)}
+.a-ask{font-size:.82rem;color:var(--a-red);font-weight:700;white-space:nowrap}
+.a-about{background:var(--a-red);color:#fff;border-radius:28px;padding:24px;display:grid;grid-template-columns:120px 1fr;gap:20px;align-items:center}
+.a-about img{width:120px;height:120px;border-radius:50%;background:#fff;object-fit:cover}
+.dA .a-about h2{color:var(--a-sun)}
+.a-foot{background:var(--a-ink);color:#fbe9c4;margin-top:26px}
+.a-foot .wrap{display:grid;grid-template-columns:1fr auto;gap:20px;padding-block:24px}
+.a-foot h3{font-family:var(--f-a-disp);color:var(--a-sun);font-weight:400;margin:0 0 6px;font-size:1.3rem}
+.a-foot p{margin:2px 0}
+.a-foot a{color:var(--a-sun)}
+.ph{background:#ffffff22;border-radius:6px;padding:0 6px}
+
+/* =================== B — بسيط وعصري =================== */
+.dB{background:var(--b-bg);color:var(--b-ink);font-family:var(--f-b-body)}
+.dB h2,.dB h3{font-family:var(--f-b-disp);font-weight:600;margin:0;line-height:1.25;text-wrap:balance}
+.b-top{border-bottom:1px solid var(--b-line);position:sticky;top:calc(env(safe-area-inset-top,0px) + 74px);background:#ffffffee;backdrop-filter:blur(8px);z-index:5}
+.b-top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:10px;flex-wrap:wrap}
+.b-brand{display:flex;align-items:center;gap:10px;font-family:var(--f-b-disp);font-weight:700;font-size:1.1rem;letter-spacing:-.01em}
+.b-brand img{width:36px;height:36px;border-radius:50%;object-fit:cover}
+.b-nav{display:flex;gap:18px;font-size:.92rem;flex-wrap:wrap}
+.b-nav a{color:var(--b-mute);text-decoration:none}
+.b-nav a:hover{color:var(--b-ink)}
+.b-hero .wrap{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;padding-block:40px}
+.b-eyebrow{font-size:.82rem;color:var(--b-red);font-weight:600;letter-spacing:.02em}
+.b-hero h2{font-size:clamp(2.1rem,5.4vw,3.5rem);font-weight:700;letter-spacing:-.02em;margin:6px 0 12px}
+.b-hero p{color:var(--b-mute);font-size:1.05rem;margin:0 0 22px;max-width:44ch}
+.b-mosaic{display:grid;grid-template-columns:1.3fr 1fr;grid-template-rows:1fr 1fr;gap:10px;aspect-ratio:1.1;max-width:100%}
+.b-mosaic img{width:100%;height:100%;object-fit:cover;border-radius:14px}
+.b-mosaic img:first-child{grid-row:span 2}
+.b-btns{display:flex;gap:10px;flex-wrap:wrap}
+.b-btn{display:inline-flex;align-items:center;gap:8px;background:var(--b-ink);color:#fff;text-decoration:none;font-weight:500;padding:12px 22px;border-radius:10px;border:0}
+.b-btn.alt{background:var(--b-soft);color:var(--b-ink)}
+.b-facts{display:flex;gap:28px;flex-wrap:wrap;padding-block:18px;border-block:1px solid var(--b-line);font-size:.92rem;color:var(--b-mute)}
+.b-facts b{display:block;color:var(--b-ink);font-family:var(--f-b-disp);font-weight:600;font-size:1rem}
+.b-sec{padding-block:36px}
+.b-sec-h{display:flex;justify-content:space-between;align-items:end;gap:12px;margin-bottom:18px;flex-wrap:wrap}
+.b-sec-h h2{font-size:1.8rem;letter-spacing:-.01em}
+.b-sec-h p{margin:0;color:var(--b-mute)}
+.b-offers{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
+.b-offer{border:1px solid var(--b-line);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:8px}
+.b-offer .pr{font-family:var(--f-b-disp);font-weight:700;font-size:1.9rem;letter-spacing:-.02em;line-height:1}
+.b-offer .pr small{font-size:.9rem;font-weight:400;color:var(--b-mute)}
+.b-offer h3{font-size:1.05rem}
+.b-offer p,.b-offer li{color:var(--b-mute);font-size:.9rem;margin:0}
+.b-offer ul{margin:0;padding-inline-start:18px}
+.b-offer .ex{color:var(--b-red);font-size:.85rem}
+.b-offer .add-offer{margin-top:auto}
+.b-tabs{display:flex;gap:6px;overflow-x:auto;padding-bottom:4px;margin-bottom:18px;scrollbar-width:thin}
+.b-tab{flex:none;background:var(--b-soft);color:var(--b-ink);border:0;border-radius:999px;padding:7px 16px;font-size:.92rem}
+.b-tab[aria-selected="true"]{background:var(--b-ink);color:#fff}
+.b-panel{display:grid;grid-template-columns:.9fr 1.1fr;gap:28px;align-items:start}
+.b-panel-img img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:16px}
+.b-panel-noimg{aspect-ratio:4/5;border-radius:16px;background:var(--b-soft);display:grid;place-items:center;font-size:4rem}
+.b-panel-body{min-width:0}
+.b-panel-body h3{font-size:1.6rem;margin-bottom:2px}
+.b-panel-body>p{color:var(--b-mute);margin:0 0 10px}
+.b-item{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--b-line)}
+.b-item-t{flex:1;min-width:0}
+.b-item-t b{display:block;font-weight:500}
+.b-item-t small{color:var(--b-mute)}
+.b-price{font-family:var(--f-b-disp);font-weight:600;white-space:nowrap;font-variant-numeric:tabular-nums}
+.b-add{flex:none;height:34px;padding:0 12px;border-radius:8px;border:1px solid var(--b-ink);background:#fff;color:var(--b-ink);font-size:.85rem}
+.b-add:hover{background:var(--b-ink);color:#fff}
+.b-ask{font-size:.82rem;color:var(--b-red);white-space:nowrap}
+.b-about{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center;background:var(--b-soft);border-radius:18px;padding:28px}
+.b-about img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px}
+.b-about p{color:var(--b-mute)}
+.b-foot{border-top:1px solid var(--b-line);margin-top:20px}
+.b-foot .wrap{display:grid;grid-template-columns:1fr 1fr auto;gap:24px;padding-block:28px;font-size:.92rem}
+.b-foot h3{font-size:1rem;margin-bottom:6px}
+.b-foot p{margin:2px 0;color:var(--b-mute)}
+.b-foot a{color:var(--b-ink)}
+.dB .ph{background:var(--b-soft);color:var(--b-mute)}
+
+/* =================== C — مصري أصيل =================== */
+.dC{color:var(--c-paper);font-family:var(--f-c-body);font-size:1.08rem;
+  background-color:var(--c-night);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 56 56'%3E%3Cg fill='none' stroke='%23d6a346' stroke-opacity='.13' stroke-width='1.2'%3E%3Cpath d='M28 4l7 17 17 7-17 7-7 17-7-17-17-7 17-7z'/%3E%3Cpath d='M28 14l4 10 10 4-10 4-4 10-4-10-10-4 10-4z'/%3E%3Cpath d='M0 0l8 8M56 0l-8 8M0 56l8-8M56 56l-8-8'/%3E%3C/g%3E%3C/svg%3E")}
+.dC h2,.dC h3{font-family:var(--f-c-disp);font-weight:700;margin:0;line-height:1.35;color:var(--c-gold-lt);text-wrap:balance}
+.c-top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:14px;flex-wrap:wrap;border-bottom:1px solid #d6a34655}
+.c-brand{display:flex;align-items:center;gap:12px}
+.c-brand img{width:52px;height:52px;border-radius:50%;object-fit:cover;border:2px solid var(--c-gold);background:#fff}
+.c-brand b{font-family:var(--f-c-disp);font-size:1.6rem;color:var(--c-gold-lt);font-weight:700;line-height:1}
+.c-brand small{display:block;font-size:.8rem;color:var(--c-gold);letter-spacing:.06em}
+.c-nav{display:flex;gap:18px;flex-wrap:wrap}
+.c-nav a{color:var(--c-paper);text-decoration:none;font-size:1rem}
+.c-hero{text-align:center;padding-block:40px 30px}
+.c-hero .orn{color:var(--c-gold);letter-spacing:.4em;font-size:.9rem}
+.c-hero h2{font-size:clamp(2.6rem,7vw,4.4rem);color:var(--c-gold-lt);margin:6px 0}
+.c-hero p{max-width:46ch;margin:0 auto 20px;color:#e9dcc0}
+.c-arch{max-width:520px;margin:26px auto 0;border-radius:260px 260px 16px 16px;overflow:hidden;border:3px solid var(--c-gold);outline:1px solid var(--c-gold);outline-offset:6px;aspect-ratio:4/3.4}
+.c-arch img{width:100%;height:100%;object-fit:cover}
+.c-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.c-btn{display:inline-flex;align-items:center;gap:8px;background:var(--c-gold);color:var(--c-night2);text-decoration:none;font-weight:700;padding:10px 24px;border-radius:4px;border:0;font-family:var(--f-c-body);font-size:1.05rem}
+.c-btn.alt{background:transparent;color:var(--c-gold-lt);border:1px solid var(--c-gold)}
+.c-band{border-block:1px solid #d6a34666;background:#0b2a2fcc}
+.c-band .wrap{display:flex;justify-content:center;gap:10px 30px;flex-wrap:wrap;padding-block:12px;color:var(--c-gold-lt);font-size:1rem}
+.c-band span::before{content:"✦";color:var(--c-pom);margin-inline-end:8px}
+.c-sec{padding-block:34px}
+.c-title{text-align:center;margin-bottom:20px}
+.c-title h2{font-size:2.2rem}
+.c-title p{margin:0;color:#d9cba9}
+.c-title::after{content:"";display:block;width:140px;height:10px;margin:8px auto 0;background:radial-gradient(circle,var(--c-gold) 2.5px,transparent 3px) center/14px 10px repeat-x}
+.c-offers{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
+.c-offer{background:var(--c-night2);border:1px solid var(--c-gold);outline:1px solid #d6a34677;outline-offset:-7px;padding:22px 20px;text-align:center;display:flex;flex-direction:column;gap:6px}
+.c-offer h3{font-size:1.4rem}
+.c-offer .pr{font-size:2rem;color:var(--c-gold);font-weight:700;line-height:1.1}
+.c-offer .pr small{font-size:1rem}
+.c-offer ul{list-style:none;padding:0;margin:0;color:#e9dcc0;font-size:1rem}
+.c-offer .ex{color:var(--c-gold-lt);font-size:.95rem}
+.c-offer .add-offer{margin-top:auto;align-self:center}
+.c-menu{background:var(--c-paper);color:var(--c-ink);padding:30px clamp(16px,4vw,44px);border:3px double var(--c-gold);outline:8px solid var(--c-paper);outline-offset:0;box-shadow:0 0 0 11px var(--c-gold)}
+.c-menu-cols{columns:2 340px;column-gap:44px}
+.c-cat{break-inside:avoid;margin-bottom:26px}
+.c-cat-h{display:flex;align-items:center;gap:12px;margin-bottom:6px}
+.c-cat-h img{width:62px;height:62px;border-radius:50%;object-fit:cover;border:2px solid var(--c-gold);flex:none}
+.c-cat-h .noimg{width:62px;height:62px;border-radius:50%;border:2px solid var(--c-gold);display:grid;place-items:center;font-size:1.7rem;flex:none}
+.dC .c-cat h3{color:var(--c-pom);font-size:1.6rem}
+.c-cat-h p{margin:0;font-size:.92rem;color:#6b5434;line-height:1.4}
+.c-item{display:flex;align-items:baseline;gap:8px;padding:5px 0}
+.c-item-t{min-width:0}
+.c-item-t small{color:#7a6646;font-size:.85rem}
+.c-dots{flex:1;border-bottom:2px dotted #b99a62;min-width:18px;transform:translateY(-4px)}
+.c-price{font-weight:700;white-space:nowrap;font-variant-numeric:tabular-nums}
+.c-add{flex:none;width:30px;height:30px;border-radius:50%;border:1.5px solid var(--c-pom);background:transparent;color:var(--c-pom);font-size:1.1rem;line-height:1;align-self:center}
+.c-add:hover{background:var(--c-pom);color:#fff}
+.c-ask{font-size:.9rem;color:var(--c-pom);white-space:nowrap}
+.c-about{display:grid;grid-template-columns:200px 1fr;gap:26px;align-items:center}
+.c-about img{width:200px;height:200px;object-fit:cover;border-radius:50%;border:3px solid var(--c-gold);background:#fff}
+.c-about p{color:#e9dcc0}
+.c-foot{border-top:1px solid #d6a34666;margin-top:20px;background:var(--c-night2)}
+.c-foot .wrap{display:grid;grid-template-columns:1fr 1fr auto;gap:24px;padding-block:28px}
+.c-foot h3{font-size:1.25rem;margin-bottom:4px}
+.c-foot p{margin:2px 0;color:#e9dcc0}
+.c-foot a{color:var(--c-gold-lt)}
+.dC .ph{background:#ffffff18}
+
+/* ---------- basket (shared, re-skinned per design) ---------- */
+.basket{position:fixed;left:0;right:0;bottom:0;z-index:50;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));background:var(--bk-bg);color:var(--bk-fg);box-shadow:0 -6px 24px #0003;font-family:var(--bk-font)}
+.basket-in{max-width:980px;margin:0 auto}
+.bk-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.bk-sum{flex:1;min-width:0;font-weight:700}
+.bk-sum small{display:block;font-weight:400;opacity:.8;font-size:.8rem}
+.bk-btn{border:0;border-radius:var(--bk-r);padding:10px 16px;font-weight:700;background:var(--bk-acc);color:var(--bk-acc-fg);text-decoration:none;display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
+.bk-btn.ghost{background:transparent;color:var(--bk-fg);border:1px solid currentColor}
+.bk-panel{max-height:58vh;overflow:auto;padding-block:10px 4px}
+.bk-line{display:flex;align-items:center;gap:8px;padding:6px 0;border-bottom:1px solid #ffffff22}
+.bk-line span{flex:1;min-width:0}
+.bk-q{display:flex;align-items:center;gap:6px}
+.bk-q button{width:28px;height:28px;border-radius:50%;border:1px solid currentColor;background:transparent;color:inherit;line-height:1}
+.bk-form{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+.bk-form label{display:flex;flex-direction:column;font-size:.8rem;gap:2px}
+.bk-form input,.bk-form textarea{font:inherit;font-size:.95rem;padding:7px 9px;border-radius:8px;border:1px solid #0002;background:#fff;color:#1d1a17;width:100%}
+.bk-form .full{grid-column:1/-1}
+.bk-hint{font-size:.78rem;opacity:.8;margin:6px 0 0}
+body[data-d="A"]{--bk-bg:var(--a-red);--bk-fg:#fff;--bk-acc:var(--a-sun);--bk-acc-fg:var(--a-red-dk);--bk-r:999px;--bk-font:var(--f-a-body)}
+body[data-d="B"]{--bk-bg:var(--b-ink);--bk-fg:#fff;--bk-acc:#25d366;--bk-acc-fg:#08341a;--bk-r:10px;--bk-font:var(--f-b-body)}
+body[data-d="C"]{--bk-bg:var(--c-night2);--bk-fg:var(--c-paper);--bk-acc:var(--c-gold);--bk-acc-fg:var(--c-night2);--bk-r:4px;--bk-font:var(--f-c-body)}
+.toast{position:fixed;bottom:84px;left:50%;transform:translateX(-50%);background:#1d1a17;color:#fff;padding:6px 14px;border-radius:999px;font-size:.88rem;z-index:60;opacity:0;transition:opacity .2s;pointer-events:none}
+.toast.on{opacity:1}
+
+/* ---------- narrow screens ---------- */
+@media (max-width:760px){
+  .a-hero .wrap,.b-hero .wrap,.b-panel,.b-about,.c-about{grid-template-columns:1fr}
+  .a-hero-img{order:-1}
+  .a-hero-img img{max-width:280px}
+  .a-perks{grid-template-columns:repeat(2,1fr)}
+  .a-cat{grid-template-columns:1fr}
+  .a-cat-img img{aspect-ratio:16/9;height:auto}
+  .a-cat-noimg{min-height:90px}
+  .a-about{grid-template-columns:1fr;text-align:center}
+  .a-about img{margin-inline:auto}
+  .a-foot .wrap,.b-foot .wrap,.c-foot .wrap{grid-template-columns:1fr}
+  .b-panel-img img,.b-panel-noimg{aspect-ratio:16/9}
+  .b-top{position:static}
+  .c-about img{margin-inline:auto}
+  .c-about{text-align:center}
+  .pick .ds{display:none}
+  .bk-form{grid-template-columns:1fr}
+  .bk-row{flex-wrap:nowrap;gap:6px}
+  .bk-btn{padding:8px 11px;font-size:.85rem}
+  .bk-sum{font-size:.9rem}
+  .a-nav,.b-nav,.c-nav{gap:12px;font-size:.85rem}
+}
+</style>
+
+<div dir="rtl" lang="ar">
+<header class="intro">
+  <h1>أهلاً يا أميرة 👋 دي ٣ أشكال مقترحة لموقع Amira's Plate</h1>
+  <p>اضغطي على أي شكل فوق عشان تشوفيه. الأسعار والأصناف والصور حقيقية من صفحتك، وتقدري تجربي الطلب: زوّدي أصناف للسلة واضغطي "ابعتي على واتساب". قوليلنا أنهي شكل عجبك، أو لو عايزة حاجة من ده وحاجة من ده.</p>
+</header>
+
+<nav class="chooser" aria-label="اختيار التصميم">
+  <div class="chooser-in">
+    <button class="pick" data-pick="A" aria-pressed="true"><span class="sw"><i style="background:#d3123e"></i><i style="background:#ffc72c"></i><i style="background:#fff6dc"></i></span><b>أ · مطبخ البيت</b><span class="ds">دافي ومبهج، بألوان اللوجو</span></button>
+    <button class="pick" data-pick="B" aria-pressed="false"><span class="sw"><i style="background:#16130f"></i><i style="background:#ffffff"></i><i style="background:#c8102e"></i></span><b>ب · بسيط وعصري</b><span class="ds">نضيف، والصور هي البطل</span></button>
+    <button class="pick" data-pick="C" aria-pressed="false"><span class="sw"><i style="background:#10363c"></i><i style="background:#d6a346"></i><i style="background:#f4ead3"></i></span><b>ج · مصري أصيل</b><span class="ds">خط رقعة وزخارف ومنيو ورقي</span></button>
+  </div>
+</nav>
+
+<main class="stage">
+  <section class="design dA" id="dA" aria-label="التصميم أ"></section>
+  <section class="design dB" id="dB" aria-label="التصميم ب" hidden></section>
+  <section class="design dC" id="dC" aria-label="التصميم ج" hidden></section>
+</main>
+
+<aside class="basket" id="basket" aria-label="سلة الطلب">
+  <div class="basket-in">
+    <div class="bk-row">
+      <div class="bk-sum" id="bkSum">السلة فاضية<small>اضغطي + جنب أي صنف</small></div>
+      <button class="bk-btn ghost" id="bkToggle" type="button" aria-expanded="false" hidden>التفاصيل</button>
+      <a class="bk-btn" id="bkSend" href="https://wa.me/201015441440" target="_blank" rel="noopener">ابعتي على واتساب</a>
+    </div>
+    <div class="bk-panel" id="bkPanel" hidden>
+      <div id="bkLines"></div>
+      <form class="bk-form" id="bkForm" autocomplete="on">
+        <label>الاسم<input id="fName" name="name" placeholder="مثال: منى أحمد"></label>
+        <label>رقم الموبايل<input id="fPhone" name="phone" inputmode="tel" placeholder="01xxxxxxxxx"></label>
+        <label class="full">العنوان<input id="fAddr" name="addr" placeholder="المنطقة، الشارع، رقم العمارة والشقة"></label>
+        <label class="full">ملاحظات / اختيارات العروض<textarea id="fNotes" name="notes" rows="2" placeholder="مثال: عرض الـ 3 أطباق: بانيه + استربس + فاهيتا"></textarea></label>
+      </form>
+      <p class="bk-hint">البيانات دي بتتكتب جوه رسالة الواتساب بس، الموقع مش بيحفظها. (ده الشكل المقترح لفورم الطلب.)</p>
+    </div>
+  </div>
+</aside>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+// ---------- the menu (later this comes from Amira's Google Sheet: category, item, unit, price) ----------
+const WA = '201015441440';
+const MENU = [
+  {id:'meat', icon:'🥩', name:'اللحوم', sub:'لحمة بلدي ممتازة، متبلة بتتبيلة شيف أميرة وجاهزة على التسوية', img:'img/kofta-tray.jpg', items:[
+    ['كفتة رز بلدي','الكيلو',350],['سجق بلدي ممتاز','الكيلو',340],['كفتة سيخ شوي','الكيلو',400],['حواوشي جاهز للحشو','الكيلو',340],
+    ['لحم مفروم بلدي ممتاز','الكيلو',365],['برجر لحم ممتاز','الكيلو',410],['شاورما لحم بدون خضار','الكيلو',550],['طرب كندوز','الكيلو',560]]},
+  {id:'chicken', icon:'🍗', name:'الفراخ', sub:'من محل دواجن طازة، متبلة وجاهزة على التسوية', img:'img/chicken-whole.jpg', items:[
+    ['فرخة كاملة متبلة','الفرخة',300],['فرخة مسحب متبلة تكا','الفرخة',305],['بانيه','الكيلو',295],['استربس','الكيلو',300],
+    ['كوردن بلو رول','الكيلو',330],['صدور جريل / مشوية','الكيلو',300],['كفتة فراخ','الكيلو',305],['شاورما فراخ','الكيلو',300],
+    ['فاهيتا فراخ','الكيلو',300],['شيش طاووق بالخضار','الكيلو',300],['برجر فراخ','الكيلو',320]]},
+  {id:'mahshi', icon:'🫑', name:'المحاشي', sub:'شغل بيتي، ملفوف بإيد أميرة', img:'img/mahshi.jpg', items:[
+    ['محشي كرنب','الكيلو',155],['محشي مشكل (كوسة / باذنجان / فلفل)','الكيلو',155],['ورق عنب بناتي','الكيلو',185],['ممبار محشي ومسلوق على التحمير','الكيلو',290]]},
+  {id:'pasta', icon:'🥘', name:'المكرونات', sub:'صواني جاهزة على الفرن', img:'img/pasta-shish.jpg', items:[
+    ['مكرونة بشاميل','تكفي 2 فرد',240],['مكرونة بشاميل','تكفي 4 أفراد',290],['مكرونة بشاميل','تكفي 6 أفراد',330],
+    ['نجرسكو','تكفي 2 فرد',230],['نجرسكو','تكفي 4 أفراد',280],['نجرسكو','تكفي 6 أفراد',325],
+    ['لازانيا','حجم وسط',375],['مكرونة بشاميل بالكفتة','حجم صغير',290],['مكرونة بشاميل شيش','حجم صغير',275]]},
+  {id:'apps', icon:'🥟', name:'المقبلات', sub:'للعزومات وللسفرة اليومية', img:'img/kobeba.jpg', items:[
+    ['كبيبة شامي','طبق 12 قطعة',240],['سمبوسك على القلي (ميكس جبن أو لحم مفروم)','طبق',110],['ورق عنب جاهز للأكل','طبق ¼ كيلو',65],['سلطة مكرونة','طبق',60]]},
+  {id:'soup', icon:'🍲', name:'شوربة أميرة', sub:'', img:'img/soup.jpg', items:[
+    ['ملوخية خضرا','علبة',50],['لسان عصفور','علبة',40]]},
+  {id:'sides', icon:'🍚', name:'الأرز والخضار', sub:'', img:null, items:[
+    ['أرز مصري بالشعرية أو بسمتي','طبق ¼ كيلو',45],['أرز مصري بالشعرية أو بسمتي','طبق ½ كيلو',90],['خضار سوتيه','طبق ½ كيلو',80]]},
+  {id:'duck', icon:'🦆', name:'البط والحمام', sub:'', img:null, items:[
+    ['بطة 3 كيلو متبلة بالكيس الحراري','البطة',720],['بطة محشية 3 كيلو حسب الرغبة','البطة',770],['جوز حمام محشي','الجوز',null]]}
+];
+const OFFERS = [
+  {t:'عرض الـ 3 أطباق', p:445, d:'كل طبق نص كيلو. اختاري أي 3 من:', o:['بانيه','استربس','فاهيتا','شاورما فراخ','شيش طاووق','كفتة فراخ','نص فرخة'], ex:'وزوّدي كوردن بلو بـ 15 ج بس'},
+  {t:'عرض الـ 485', p:485, d:'اختاري تشكيلة من دول:', o:['½ فرخة + ½ كفتة لحم + ½ بانيه أو استربس','½ كفتة فراخ + ½ كفتة لحم + ½ شاورما فراخ','½ كفتة فراخ + ½ كفتة لحم + ½ فرخة شوي أو مسحب']},
+  {t:'حواوشي وشيش وبانيه', p:470, d:'½ حواوشي + ½ شيش + ½ بانيه'},
+  {t:'كوردن بلو وكفتة وبانيه', p:490, d:'½ كوردن بلو + ½ كفتة لحم + ½ بانيه'},
+  {t:'ممبار وسجق وشاورما', p:465, d:'½ ممبار + ½ سجق + ½ شاورما فراخ'},
+  {t:'كفتة رز وسجق وبانيه', p:480, d:'½ كفتة رز + ½ سجق + ½ بانيه'}
+];
+const PLACE = {areas:'هتتحدد', fee:'هتتحدد', notice:'هتتحدد'};
+
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const askLink = name => 'https://wa.me/' + WA + '?text=' + encodeURIComponent('مساء الخير، عايزة أعرف سعر ' + name + ' النهارده');
+const waHello = 'https://wa.me/' + WA + '?text=' + encodeURIComponent('أهلاً Amira\'s Plate، عايزة أطلب');
+
+// ---------- design A ----------
+function renderA(){
+  const item = (c,i,[n,u,p]) => `<div class="a-item"><div class="a-item-t"><b>${esc(n)}</b><small>${esc(u)}</small></div>` +
+    (p==null ? `<a class="a-ask" href="${askLink(n)}" target="_blank" rel="noopener">حسب سعر اليوم ←</a>`
+             : `<span class="a-price">${p}<i>ج</i></span><button class="a-add" data-add="${c}:${i}" aria-label="زوّدي ${esc(n)} للسلة">+</button>`) + `</div>`;
+  const offer = (o,k) => `<article class="a-offer"><span class="pr">${o.p}<small>جنيه</small></span><h3>${esc(o.t)}</h3><div>${esc(o.d)}</div>` +
+    (o.o ? `<ul>${o.o.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>` : '') + (o.ex ? `<div class="ex">${esc(o.ex)}</div>` : '') +
+    `<button class="a-btn add-offer" data-offer="${k}">+ زوّدي العرض</button></article>`;
+  document.getElementById('dA').innerHTML = `
+  <div class="a-top"><div class="wrap"><div class="a-brand"><img src="img/logo.jpg" alt="">Amira's Plate</div>
+    <nav class="a-nav"><a href="#a-offers">العروض</a><a href="#a-menu">المنيو</a><a href="#a-about">عن أميرة</a><a href="#a-foot">التوصيل</a></nav></div></div>
+  <div class="a-hero"><div class="wrap">
+    <div><h2>أكل بيتي<br>بطعم فاخر</h2>
+      <p>فريش، شغل بيتي، وجاهز على التسوية. بتتبيلة شيف أميرة الخاصة، ويوصلك لحد البيت.</p>
+      <div class="a-btns"><a class="a-btn" href="${waHello}" target="_blank" rel="noopener">اطلبي على واتساب</a><a class="a-btn alt" href="#a-menu">شوفي المنيو</a></div></div>
+    <div class="a-hero-img"><img src="img/chicken-whole.jpg" alt="فرخة كاملة متبلة ومشوية"><span class="a-stamp">جاهز<br>ع التسوية</span></div>
+  </div><svg class="a-wave" viewBox="0 0 1200 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0 20 Q 75 0 150 20 T 300 20 T 450 20 T 600 20 T 750 20 T 900 20 T 1050 20 T 1200 20 V40 H0Z" fill="#fff6dc"/></svg></div>
+  <div class="wrap">
+    <div class="a-perks">
+      <div class="a-perk"><i>🐔</i>فراخ من محل دواجن طازة</div><div class="a-perk"><i>🥩</i>لحمة بلدي ممتازة</div>
+      <div class="a-perk"><i>🌶️</i>تتبيلة شيف أميرة الخاصة</div><div class="a-perk"><i>🛵</i>توصيل لحد البيت</div></div>
+    <section class="a-sec" id="a-offers"><h2>العروض الدايمة</h2><p class="a-sub">لو بتحبي التنويع ومش عايزة تطبخي كل يوم 😉</p>
+      <div class="a-offers">${OFFERS.map(offer).join('')}</div></section>
+    <section class="a-sec" id="a-menu"><h2>المنيو</h2><p class="a-sub">كل الأسعار بالجنيه.</p>
+      <div class="a-chips">${MENU.map(c=>`<a href="#a-${c.id}">${c.icon} ${esc(c.name)}</a>`).join('')}</div>
+      ${MENU.map((c,ci)=>`<div class="a-cat" id="a-${c.id}">${c.img?`<div class="a-cat-img"><img src="${c.img}" alt="${esc(c.name)}" loading="lazy"></div>`:`<div class="a-cat-noimg" aria-hidden="true">${c.icon}</div>`}
+        <div class="a-cat-body"><h3>${esc(c.name)}</h3>${c.sub?`<p class="a-sub">${esc(c.sub)}</p>`:''}${c.items.map((it,i)=>item(ci,i,it)).join('')}</div></div>`).join('')}
+    </section>
+    <section class="a-sec" id="a-about"><div class="a-about"><img src="img/logo.jpg" alt="شيف أميرة">
+      <div><h2>من مطبخ شيف أميرة</h2><p>بنطبخ بحب وبنقدّم باهتمام. كل صنف بيتعمل في البيت، بنفس التتبيلة اللي اتعودتوا عليها، وبيتجمّد فريش عشان يوصلك جاهز على التسوية.</p></div></div></section>
+  </div>
+  <footer class="a-foot" id="a-foot"><div class="wrap">
+    <div><h3>التوصيل والطلب</h3>
+      <p>واتساب: <b dir="ltr">+20 101 544 1440</b></p>
+      <p>مناطق التوصيل: <span class="ph">${PLACE.areas}</span> · رسوم التوصيل: <span class="ph">${PLACE.fee}</span></p>
+      <p>اطلبي قبلها بـ: <span class="ph">${PLACE.notice}</span></p>
+      <p><a href="https://www.instagram.com/amirasplate/" target="_blank" rel="noopener">إنستجرام</a> · <a href="https://www.facebook.com/profile.php?id=61564986495343" target="_blank" rel="noopener">فيسبوك</a></p></div>
+    <div class="qrs"><figure><div class="qr-box" data-qr="wa"></div><figcaption>امسحي واطلبي على واتساب</figcaption></figure>
+      <figure><div class="qr-ph">QR الموقع<br>بعد حجز الدومين</div><figcaption>QR الموقع</figcaption></figure></div>
+  </div></footer>`;
+}
+
+// ---------- design B ----------
+let bTab = 0;
+function renderB(){
+  const item = (c,i,[n,u,p]) => `<div class="b-item"><div class="b-item-t"><b>${esc(n)}</b><small>${esc(u)}</small></div>` +
+    (p==null ? `<a class="b-ask" href="${askLink(n)}" target="_blank" rel="noopener">اسألي عن سعر اليوم</a>`
+             : `<span class="b-price">${p} ج</span><button class="b-add" data-add="${c}:${i}" aria-label="زوّدي ${esc(n)} للسلة">+ أضيفي</button>`) + `</div>`;
+  const offer = (o,k) => `<article class="b-offer"><div class="pr">${o.p} <small>ج</small></div><h3>${esc(o.t)}</h3><p>${esc(o.d)}</p>` +
+    (o.o ? `<ul>${o.o.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>` : '') + (o.ex ? `<p class="ex">${esc(o.ex)}</p>` : '') +
+    `<button class="b-btn alt add-offer" data-offer="${k}">+ أضيفي العرض</button></article>`;
+  const c = MENU[bTab];
+  document.getElementById('dB').innerHTML = `
+  <div class="b-top"><div class="wrap"><div class="b-brand"><img src="img/logo.jpg" alt="">Amira's Plate</div>
+    <nav class="b-nav"><a href="#b-menu">المنيو</a><a href="#b-offers">العروض</a><a href="#b-about">عننا</a><a href="#b-foot">التوصيل</a></nav></div></div>
+  <div class="b-hero"><div class="wrap">
+    <div><div class="b-eyebrow">أكل بيتي · فروزن جاهز على التسوية</div><h2>طعم مطبخ شيف،<br>من مطبخ البيت.</h2>
+      <p>لحوم وفراخ متبلة، محاشي، صواني مكرونة ومقبلات. بتتبيلة أميرة الخاصة، وبتوصل لحد بابك.</p>
+      <div class="b-btns"><a class="b-btn" href="#b-menu">اطلبي من المنيو</a><a class="b-btn alt" href="${waHello}" target="_blank" rel="noopener">كلّمينا على واتساب</a></div></div>
+    <div class="b-mosaic"><img src="img/sausage-tray.jpg" alt="صينية سجق بلدي"><img src="img/mahshi.jpg" alt="محشي وورق عنب"><img src="img/kobeba.jpg" alt="كبيبة شامي"></div>
+  </div></div>
+  <div class="wrap"><div class="b-facts"><div><b>فراخ طازة</b>من محل دواجن</div><div><b>لحمة بلدي</b>ممتازة</div><div><b>تتبيلة خاصة</b>من شيف أميرة</div><div><b>توصيل</b>لحد البيت</div></div>
+    <section class="b-sec" id="b-menu"><div class="b-sec-h"><h2>المنيو</h2><p>اختاري القسم</p></div>
+      <div class="b-tabs" role="tablist">${MENU.map((m,i)=>`<button class="b-tab" role="tab" aria-selected="${i===bTab}" data-btab="${i}">${esc(m.name)}</button>`).join('')}</div>
+      <div class="b-panel" role="tabpanel">${c.img?`<div class="b-panel-img"><img src="${c.img}" alt="${esc(c.name)}"></div>`:`<div class="b-panel-noimg" aria-hidden="true">${c.icon}</div>`}
+        <div class="b-panel-body"><h3>${esc(c.name)}</h3>${c.sub?`<p>${esc(c.sub)}</p>`:''}${c.items.map((it,i)=>item(bTab,i,it)).join('')}</div></div></section>
+    <section class="b-sec" id="b-offers"><div class="b-sec-h"><h2>العروض الدايمة</h2><p>أكل بيتي بسعر أوفر</p></div>
+      <div class="b-offers">${OFFERS.map(offer).join('')}</div></section>
+    <section class="b-sec" id="b-about"><div class="b-about"><div><div class="b-eyebrow">عن Amira's Plate</div><h2>بنطبخ بحب، وبنقدّم باهتمام.</h2>
+      <p>كل صنف بيتعمل في مطبخ أميرة بنفس الطريقة اللي بتطبخ بيها لبيتها، وبيتجمّد فريش عشان يوصلك جاهز على التسوية.</p></div>
+      <img src="img/kofta-raw.jpg" alt="كفتة جاهزة على التسوية" loading="lazy"></div></section>
+  </div>
+  <footer class="b-foot" id="b-foot"><div class="wrap">
+    <div><h3>اطلبي</h3><p>واتساب: <b dir="ltr">+20 101 544 1440</b></p><p><a href="https://www.instagram.com/amirasplate/" target="_blank" rel="noopener">إنستجرام</a> · <a href="https://www.facebook.com/profile.php?id=61564986495343" target="_blank" rel="noopener">فيسبوك</a></p></div>
+    <div><h3>التوصيل</h3><p>المناطق: <span class="ph">${PLACE.areas}</span></p><p>الرسوم: <span class="ph">${PLACE.fee}</span></p><p>اطلبي قبلها بـ: <span class="ph">${PLACE.notice}</span></p></div>
+    <div class="qrs"><figure><div class="qr-box" data-qr="wa"></div><figcaption>QR واتساب</figcaption></figure><figure><div class="qr-ph">QR الموقع<br>بعد حجز الدومين</div><figcaption>QR الموقع</figcaption></figure></div>
+  </div></footer>`;
+}
+
+// ---------- design C ----------
+function renderC(){
+  const item = (c,i,[n,u,p]) => `<div class="c-item"><span class="c-item-t">${esc(n)} <small>(${esc(u)})</small></span><span class="c-dots"></span>` +
+    (p==null ? `<a class="c-ask" href="${askLink(n)}" target="_blank" rel="noopener">حسب سعر اليوم</a>`
+             : `<span class="c-price">${p} ج</span><button class="c-add" data-add="${c}:${i}" aria-label="زوّدي ${esc(n)} للسلة">+</button>`) + `</div>`;
+  const offer = (o,k) => `<article class="c-offer"><h3>${esc(o.t)}</h3><div class="pr">${o.p} <small>جنيه</small></div><div>${esc(o.d)}</div>` +
+    (o.o ? `<ul>${o.o.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>` : '') + (o.ex ? `<div class="ex">${esc(o.ex)}</div>` : '') +
+    `<button class="c-btn add-offer" data-offer="${k}">أضيفي العرض</button></article>`;
+  document.getElementById('dC').innerHTML = `
+  <div class="c-top"><div class="wrap"><div class="c-brand"><img src="img/logo.jpg" alt=""><div><b>مطبخ أميرة</b><small>AMIRA'S PLATE</small></div></div>
+    <nav class="c-nav"><a href="#c-menu">قائمة الطعام</a><a href="#c-offers">العروض</a><a href="#c-about">حكايتنا</a><a href="#c-foot">التوصيل</a></nav></div></div>
+  <div class="wrap c-hero"><div class="orn">✦ ✦ ✦</div><h2>أكل بيتي بطعم فاخر</h2>
+    <p>من مطبخ شيف أميرة لسفرتك: لحوم وفراخ متبلة جاهزة على التسوية، محاشي ملفوفة بالإيد، وصواني على أصولها.</p>
+    <div class="c-btns"><a class="c-btn" href="${waHello}" target="_blank" rel="noopener">اطلبي على واتساب</a><a class="c-btn alt" href="#c-menu">تصفّحي القائمة</a></div>
+    <div class="c-arch"><img src="img/mahshi.jpg" alt="محشي مشكل وورق عنب"></div></div>
+  <div class="c-band"><div class="wrap"><span>فراخ من محل دواجن طازة</span><span>لحمة بلدي ممتازة</span><span>تتبيلة شيف أميرة الخاصة</span><span>توصيل للبيت</span></div></div>
+  <div class="wrap">
+    <section class="c-sec" id="c-menu"><div class="c-title"><h2>قائمة الطعام</h2><p>الأسعار بالجنيه المصري</p></div>
+      <div class="c-menu"><div class="c-menu-cols">${MENU.map((m,ci)=>`<div class="c-cat"><div class="c-cat-h">${m.img?`<img src="${m.img}" alt="" loading="lazy">`:`<span class="noimg" aria-hidden="true">${m.icon}</span>`}<div><h3>${esc(m.name)}</h3>${m.sub?`<p>${esc(m.sub)}</p>`:''}</div></div>${m.items.map((it,i)=>item(ci,i,it)).join('')}</div>`).join('')}</div></div></section>
+    <section class="c-sec" id="c-offers"><div class="c-title"><h2>العروض الدايمة</h2><p>تنويع على السفرة بسعر أوفر</p></div>
+      <div class="c-offers">${OFFERS.map(offer).join('')}</div></section>
+    <section class="c-sec" id="c-about"><div class="c-about"><img src="img/logo.jpg" alt="شيف أميرة" loading="lazy">
+      <div><h2>حكاية مطبخ أميرة</h2><p>بنطبخ بحب وبنقدّم باهتمام. وصفات البيت المصري بتتعمل كل يوم بإيد شيف أميرة وبتتبيلتها الخاصة، وتوصلك فريش وجاهزة على التسوية.</p></div></div></section>
+  </div>
+  <footer class="c-foot" id="c-foot"><div class="wrap">
+    <div><h3>للطلب</h3><p>واتساب: <b dir="ltr">+20 101 544 1440</b></p><p><a href="https://www.instagram.com/amirasplate/" target="_blank" rel="noopener">إنستجرام</a> · <a href="https://www.facebook.com/profile.php?id=61564986495343" target="_blank" rel="noopener">فيسبوك</a></p></div>
+    <div><h3>التوصيل</h3><p>المناطق: <span class="ph">${PLACE.areas}</span></p><p>الرسوم: <span class="ph">${PLACE.fee}</span></p><p>اطلبي قبلها بـ: <span class="ph">${PLACE.notice}</span></p></div>
+    <div class="qrs"><figure><div class="qr-box" data-qr="wa"></div><figcaption>QR واتساب</figcaption></figure><figure><div class="qr-ph">QR الموقع<br>بعد حجز الدومين</div><figcaption>QR الموقع</figcaption></figure></div>
+  </div></footer>`;
+}
+
+function drawQRs(root){
+  root.querySelectorAll('[data-qr="wa"]').forEach(el => {
+    if (el.dataset.done || typeof QRCode === 'undefined') return;
+    try { new QRCode(el, {text:'https://wa.me/' + WA, width:116, height:116, correctLevel:QRCode.CorrectLevel.M}); el.dataset.done = '1'; } catch(e) {}
+  });
+}
+
+// ---------- shared basket ----------
+const basket = new Map(); // key -> {name, unit, price, qty}
+const fmt = n => n.toLocaleString('en-US');
+function addKey(key, rec){ const b = basket.get(key); if (b) b.qty++; else basket.set(key, {...rec, qty:1}); refresh(); toast('اتزوّد للسلة: ' + rec.name); }
+function refresh(){
+  let count = 0, total = 0;
+  basket.forEach(b => { count += b.qty; total += b.qty * b.price; });
+  const sum = document.getElementById('bkSum'), tog = document.getElementById('bkToggle');
+  sum.innerHTML = count ? `${count} صنف · ${fmt(total)} ج<small>من غير رسوم التوصيل</small>` : 'السلة فاضية<small>اضغطي + جنب أي صنف</small>';
+  tog.hidden = !count;
+  if (!count) { document.getElementById('bkPanel').hidden = true; tog.setAttribute('aria-expanded','false'); }
+  document.getElementById('bkLines').innerHTML = [...basket].map(([k,b]) =>
+    `<div class="bk-line"><span>${esc(b.name)} <small>(${esc(b.unit)})</small> · ${fmt(b.price*b.qty)} ج</span><span class="bk-q"><button type="button" data-q="${k}" data-d="-1" aria-label="قلّلي">−</button>${b.qty}<button type="button" data-q="${k}" data-d="1" aria-label="زوّدي">+</button></span></div>`).join('');
+  document.getElementById('bkSend').href = 'https://wa.me/' + WA + '?text=' + encodeURIComponent(message(total));
+}
+function message(total){
+  if (!basket.size) return 'أهلاً Amira\'s Plate، عايزة أطلب';
+  const v = id => document.getElementById(id).value.trim();
+  const lines = ['طلب جديد من الموقع 🛒', ''];
+  basket.forEach(b => lines.push(`• ${b.name} (${b.unit}) × ${b.qty} = ${fmt(b.price*b.qty)} ج`));
+  lines.push('', `الإجمالي: ${fmt(total)} ج (من غير التوصيل)`);
+  if (v('fNotes')) lines.push('ملاحظات: ' + v('fNotes'));
+  lines.push('', 'الاسم: ' + (v('fName') || ''), 'الموبايل: ' + (v('fPhone') || ''), 'العنوان: ' + (v('fAddr') || ''));
+  return lines.join('\n');
+}
+let tt;
+function toast(t){ const el = document.getElementById('toast'); el.textContent = t; el.classList.add('on'); clearTimeout(tt); tt = setTimeout(() => el.classList.remove('on'), 1400); }
+
+document.addEventListener('click', e => {
+  const add = e.target.closest('[data-add]');
+  if (add) { const [c,i] = add.dataset.add.split(':').map(Number); const [n,u,p] = MENU[c].items[i]; addKey('m'+c+'-'+i, {name:n, unit:u, price:p}); return; }
+  const off = e.target.closest('[data-offer]');
+  if (off) { const o = OFFERS[+off.dataset.offer]; addKey('o'+off.dataset.offer, {name:o.t, unit:'عرض', price:o.p}); return; }
+  const q = e.target.closest('[data-q]');
+  if (q) { const b = basket.get(q.dataset.q); b.qty += +q.dataset.d; if (b.qty <= 0) basket.delete(q.dataset.q); refresh(); return; }
+  const tab = e.target.closest('[data-btab]');
+  if (tab) { bTab = +tab.dataset.btab; renderB(); drawQRs(document.getElementById('dB')); document.querySelector('.b-tab[aria-selected="true"]').focus(); return; }
+  const pick = e.target.closest('[data-pick]');
+  if (pick) show(pick.dataset.pick);
+});
+document.getElementById('bkToggle').addEventListener('click', e => {
+  const p = document.getElementById('bkPanel'); p.hidden = !p.hidden; e.currentTarget.setAttribute('aria-expanded', String(!p.hidden));
+});
+document.getElementById('bkForm').addEventListener('input', refresh);
+document.getElementById('bkForm').addEventListener('submit', e => e.preventDefault());
+
+function show(d){
+  ['A','B','C'].forEach(x => { document.getElementById('d'+x).hidden = x !== d; });
+  document.querySelectorAll('[data-pick]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.pick === d)));
+  document.body.dataset.d = d;
+  drawQRs(document.getElementById('d'+d));
+  try { localStorage.setItem('ap-design', d); } catch(e) {}
+  const top = document.querySelector('.chooser').offsetTop;
+  if (window.scrollY > top) window.scrollTo({top});
+}
+
+renderA(); renderB(); renderC();
+let start = 'A';
+const h = (location.hash || '').replace('#','').toUpperCase();
+if (['A','B','C'].includes(h)) start = h; else { try { const s = localStorage.getItem('ap-design'); if (['A','B','C'].includes(s)) start = s; } catch(e) {} }
+show(start); refresh();
+</script>
+
+</body>
+</html>
