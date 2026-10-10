@@ -23,6 +23,8 @@
   --b-bg:#ffffff; --b-ink:#16130f; --b-mute:#6e6760; --b-line:#ece7e1; --b-soft:#f6f3ef; --b-red:#c8102e;
   /* C: Egyptian traditional */
   --c-night:#10363c; --c-night2:#0b2a2f; --c-gold:#d6a346; --c-gold-lt:#efd08f; --c-pom:#b3262f; --c-paper:#f4ead3; --c-ink:#2b1d10;
+  /* D: C's layout in A's colours */
+  --d-red:#d3123e; --d-red-dk:#9e0c2d; --d-sun:#ffc72c; --d-sun-lt:#ffe08a; --d-cream:#fff6dc; --d-paper:#fffbf1; --d-ink:#3a1d12;
   --f-a-disp:"Lalezar","Almarai",system-ui,sans-serif; --f-a-body:"Almarai",system-ui,sans-serif;
   --f-b-disp:"Readex Pro","IBM Plex Sans Arabic",system-ui,sans-serif; --f-b-body:"IBM Plex Sans Arabic",system-ui,sans-serif;
   --f-c-disp:"Aref Ruqaa","Amiri",serif; --f-c-body:"Amiri","Times New Roman",serif;
@@ -41,10 +43,11 @@ img{display:block}
 .intro h1{font-family:var(--f-b-disp);font-weight:600;font-size:1.35rem;margin:0 0 4px;text-wrap:balance}
 .intro p{margin:0;color:var(--ch-mute);font-size:.95rem;max-width:62ch}
 .chooser{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--ch-bg);padding-block:10px;padding-inline:16px;border-bottom:1px solid #35302a}
-.chooser-in{max-width:980px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.chooser-in{max-width:980px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
 .pick{background:#2a2621;color:var(--ch-fg);border:2px solid transparent;border-radius:12px;padding:8px 10px;text-align:right;display:flex;flex-direction:column;gap:0;min-width:0}
 .pick b{font-family:var(--f-b-disp);font-weight:600;font-size:1rem;line-height:1.4}
 .pick .ds{font-size:.78rem;color:var(--ch-mute);line-height:1.4}
+.pick .new{display:inline-block;background:var(--ch-on);color:#3a1d12;font-size:.68rem;font-weight:700;border-radius:999px;padding:0 7px;margin-inline-start:4px;vertical-align:middle;line-height:1.6}
 .pick[aria-pressed="true"]{border-color:var(--ch-on);background:#3a3127}
 .pick .sw{display:flex;gap:3px;margin-bottom:4px}
 .pick .sw i{width:14px;height:14px;border-radius:50%;display:block;border:1px solid #0003}
@@ -247,6 +250,70 @@ img{display:block}
 .c-foot a{color:var(--c-gold-lt)}
 .dC .ph{background:#ffffff18}
 
+/* =================== D — أصيل بألوان اللوجو =================== */
+.dD{background:var(--d-cream);color:var(--d-ink);font-family:var(--f-c-body);font-size:1.08rem}
+.dD h2,.dD h3{font-family:var(--f-c-disp);font-weight:700;margin:0;line-height:1.35;color:var(--d-red);text-wrap:balance}
+.d-crim{background-color:var(--d-red);color:#fff;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 56 56'%3E%3Cg fill='none' stroke='%23ffc72c' stroke-opacity='.22' stroke-width='1.2'%3E%3Cpath d='M28 4l7 17 17 7-17 7-7 17-7-17-17-7 17-7z'/%3E%3Cpath d='M28 14l4 10 10 4-10 4-4 10-4-10-10-4 10-4z'/%3E%3Cpath d='M0 0l8 8M56 0l-8 8M0 56l8-8M56 56l-8-8'/%3E%3C/g%3E%3C/svg%3E")}
+.dD .d-crim h2,.dD .d-crim h3{color:var(--d-sun)}
+.d-top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:14px;flex-wrap:wrap;border-bottom:1px solid #ffc72c55}
+.d-brand{display:flex;align-items:center;gap:12px}
+.d-brand img{width:52px;height:52px;border-radius:50%;object-fit:cover;border:2px solid var(--d-sun);background:#fff}
+.d-brand b{font-family:var(--f-c-disp);font-size:1.6rem;color:var(--d-sun);font-weight:700;line-height:1}
+.d-brand small{display:block;font-size:.8rem;color:var(--d-sun-lt);letter-spacing:.06em}
+.d-nav{display:flex;gap:18px;flex-wrap:wrap}
+.d-nav a{color:#fff;text-decoration:none;font-size:1rem}
+.d-hero{text-align:center;padding-block:40px 34px}
+.d-hero .orn{color:var(--d-sun);letter-spacing:.4em;font-size:.9rem}
+.d-hero h2{font-size:clamp(2.6rem,7vw,4.4rem);margin:6px 0}
+.d-hero p{max-width:46ch;margin:0 auto 20px;color:#ffe9ee}
+.d-arch{max-width:520px;margin:26px auto 0;border-radius:260px 260px 16px 16px;overflow:hidden;border:4px solid var(--d-sun);outline:1px solid var(--d-sun);outline-offset:6px;aspect-ratio:4/3.4}
+.d-arch img{width:100%;height:100%;object-fit:cover}
+.d-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.d-btn{display:inline-flex;align-items:center;gap:8px;background:var(--d-sun);color:var(--d-red-dk);text-decoration:none;font-weight:700;padding:10px 24px;border-radius:4px;border:0;font-family:var(--f-c-body);font-size:1.05rem}
+.d-btn.alt{background:transparent;color:var(--d-sun);border:1px solid var(--d-sun)}
+.d-btn.red{background:var(--d-red);color:#fff}
+.d-band{background:var(--d-red-dk);border-block:2px solid var(--d-sun)}
+.d-band .wrap{display:flex;justify-content:center;gap:10px 30px;flex-wrap:wrap;padding-block:12px;color:var(--d-sun-lt);font-size:1rem}
+.d-band span::before{content:"✦";color:var(--d-sun);margin-inline-end:8px}
+.d-sec{padding-block:34px}
+.d-title{text-align:center;margin-bottom:20px}
+.d-title h2{font-size:2.2rem}
+.d-title p{margin:0;color:#7a5a45}
+.d-title::after{content:"";display:block;width:140px;height:10px;margin:8px auto 0;background:radial-gradient(circle,var(--d-red) 2.5px,transparent 3px) center/14px 10px repeat-x}
+.d-offers{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
+.d-offer{background:var(--d-paper);border:2px solid var(--d-red);outline:1px solid var(--d-sun);outline-offset:-8px;padding:22px 20px;text-align:center;display:flex;flex-direction:column;gap:6px}
+.d-offer h3{font-size:1.4rem}
+.d-offer .pr{font-size:2rem;color:var(--d-red);font-weight:700;line-height:1.1}
+.d-offer .pr small{font-size:1rem}
+.d-offer ul{list-style:none;padding:0;margin:0;font-size:1rem}
+.d-offer .ex{color:var(--d-red-dk);font-size:.95rem;font-weight:700}
+.d-offer .add-offer{margin-top:auto;align-self:center}
+.d-menu{background:var(--d-paper);color:var(--d-ink);padding:30px clamp(16px,4vw,44px);border:3px double var(--d-red);outline:8px solid var(--d-paper);box-shadow:0 0 0 11px var(--d-sun)}
+.d-menu-cols{columns:2 340px;column-gap:44px}
+.d-cat{break-inside:avoid;margin-bottom:26px}
+.d-cat-h{display:flex;align-items:center;gap:12px;margin-bottom:6px}
+.d-cat-h img{width:62px;height:62px;border-radius:50%;object-fit:cover;border:2px solid var(--d-sun);flex:none}
+.d-cat-h .noimg{width:62px;height:62px;border-radius:50%;border:2px solid var(--d-sun);display:grid;place-items:center;font-size:1.7rem;flex:none}
+.dD .d-cat h3{font-size:1.6rem}
+.d-cat-h p{margin:0;font-size:.92rem;color:#7a5a45;line-height:1.4}
+.d-item{display:flex;align-items:baseline;gap:8px;padding:5px 0}
+.d-item-t{min-width:0}
+.d-item-t small{color:#8a6a52;font-size:.85rem}
+.d-dots{flex:1;border-bottom:2px dotted #e3a9b5;min-width:18px;transform:translateY(-4px)}
+.d-price{font-weight:700;white-space:nowrap;font-variant-numeric:tabular-nums}
+.d-add{flex:none;width:30px;height:30px;border-radius:50%;border:1.5px solid var(--d-red);background:transparent;color:var(--d-red);font-size:1.1rem;line-height:1;align-self:center}
+.d-add:hover{background:var(--d-red);color:#fff}
+.d-ask{font-size:.9rem;color:var(--d-red);white-space:nowrap}
+.d-about{display:grid;grid-template-columns:200px 1fr;gap:26px;align-items:center}
+.d-about img{width:200px;height:200px;object-fit:cover;border-radius:50%;border:4px solid var(--d-red);outline:2px solid var(--d-sun);outline-offset:4px;background:#fff}
+.d-foot{margin-top:20px}
+.d-foot .wrap{display:grid;grid-template-columns:1fr 1fr auto;gap:24px;padding-block:28px}
+.d-foot h3{font-size:1.25rem;margin-bottom:4px}
+.d-foot p{margin:2px 0;color:#ffe9ee}
+.d-foot a{color:var(--d-sun)}
+.dD .ph{background:#ffffff26}
+
 /* ---------- basket (shared, re-skinned per design) ---------- */
 .basket{position:fixed;left:0;right:0;bottom:0;z-index:50;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));background:var(--bk-bg);color:var(--bk-fg);box-shadow:0 -6px 24px #0003;font-family:var(--bk-font)}
 .basket-in{max-width:980px;margin:0 auto}
@@ -267,13 +334,20 @@ img{display:block}
 .bk-hint{font-size:.78rem;opacity:.8;margin:6px 0 0}
 body[data-d="A"]{--bk-bg:var(--a-red);--bk-fg:#fff;--bk-acc:var(--a-sun);--bk-acc-fg:var(--a-red-dk);--bk-r:999px;--bk-font:var(--f-a-body)}
 body[data-d="B"]{--bk-bg:var(--b-ink);--bk-fg:#fff;--bk-acc:#25d366;--bk-acc-fg:#08341a;--bk-r:10px;--bk-font:var(--f-b-body)}
+body[data-d="D"]{--bk-bg:var(--d-red-dk);--bk-fg:#fff;--bk-acc:var(--d-sun);--bk-acc-fg:var(--d-red-dk);--bk-r:4px;--bk-font:var(--f-c-body)}
 body[data-d="C"]{--bk-bg:var(--c-night2);--bk-fg:var(--c-paper);--bk-acc:var(--c-gold);--bk-acc-fg:var(--c-night2);--bk-r:4px;--bk-font:var(--f-c-body)}
 .toast{position:fixed;bottom:84px;left:50%;transform:translateX(-50%);background:#1d1a17;color:#fff;padding:6px 14px;border-radius:999px;font-size:.88rem;z-index:60;opacity:0;transition:opacity .2s;pointer-events:none}
 .toast.on{opacity:1}
 
 /* ---------- narrow screens ---------- */
 @media (max-width:760px){
-  .a-hero .wrap,.b-hero .wrap,.b-panel,.b-about,.c-about{grid-template-columns:1fr}
+  .a-hero .wrap,.b-hero .wrap,.b-panel,.b-about,.c-about,.d-about{grid-template-columns:1fr}
+  .d-about{text-align:center}
+  .d-about img{margin-inline:auto}
+  .d-foot .wrap{grid-template-columns:1fr}
+  .chooser-in{gap:5px}
+  .pick{padding:6px 7px}
+  .pick b{font-size:.86rem}
   .a-hero-img{order:-1}
   .a-hero-img img{max-width:280px}
   .a-perks{grid-template-columns:repeat(2,1fr)}
@@ -292,7 +366,7 @@ body[data-d="C"]{--bk-bg:var(--c-night2);--bk-fg:var(--c-paper);--bk-acc:var(--c
   .bk-row{flex-wrap:nowrap;gap:6px}
   .bk-btn{padding:8px 11px;font-size:.85rem}
   .bk-sum{font-size:.9rem}
-  .a-nav,.b-nav,.c-nav{gap:12px;font-size:.85rem}
+  .a-nav,.b-nav,.c-nav,.d-nav{gap:12px;font-size:.85rem}
 }
 </style>
 
@@ -300,18 +374,21 @@ body[data-d="C"]{--bk-bg:var(--c-night2);--bk-fg:var(--c-paper);--bk-acc:var(--c
 <header class="intro">
   <h1>أهلاً يا أميرة 👋 دي ٣ أشكال مقترحة لموقع Amira's Plate</h1>
   <p>اضغطي على أي شكل فوق عشان تشوفيه. الأسعار والأصناف والصور حقيقية من صفحتك، وتقدري تجربي الطلب: زوّدي أصناف للسلة واضغطي "ابعتي على واتساب". قوليلنا أنهي شكل عجبك، أو لو عايزة حاجة من ده وحاجة من ده.</p>
+  <p><b style="color:#ffc72c">جديد:</b> التصميم د بيجمع شكل وزخارف التصميم ج مع ألوان التصميم أ (ألوان اللوجو).</p>
 </header>
 
 <nav class="chooser" aria-label="اختيار التصميم">
   <div class="chooser-in">
-    <button class="pick" data-pick="A" aria-pressed="true"><span class="sw"><i style="background:#d3123e"></i><i style="background:#ffc72c"></i><i style="background:#fff6dc"></i></span><b>أ · مطبخ البيت</b><span class="ds">دافي ومبهج، بألوان اللوجو</span></button>
+    <button class="pick" data-pick="D" aria-pressed="true"><span class="sw"><i style="background:#d3123e"></i><i style="background:#ffc72c"></i><i style="background:#fff6dc"></i></span><b>د · ج بألوان أ<span class="new">جديد</span></b><span class="ds">زخارف ومنيو ورقي بألوان اللوجو</span></button>
+    <button class="pick" data-pick="A" aria-pressed="false"><span class="sw"><i style="background:#d3123e"></i><i style="background:#ffc72c"></i><i style="background:#fff6dc"></i></span><b>أ · مطبخ البيت</b><span class="ds">دافي ومبهج، بألوان اللوجو</span></button>
     <button class="pick" data-pick="B" aria-pressed="false"><span class="sw"><i style="background:#16130f"></i><i style="background:#ffffff"></i><i style="background:#c8102e"></i></span><b>ب · بسيط وعصري</b><span class="ds">نضيف، والصور هي البطل</span></button>
     <button class="pick" data-pick="C" aria-pressed="false"><span class="sw"><i style="background:#10363c"></i><i style="background:#d6a346"></i><i style="background:#f4ead3"></i></span><b>ج · مصري أصيل</b><span class="ds">خط رقعة وزخارف ومنيو ورقي</span></button>
   </div>
 </nav>
 
 <main class="stage">
-  <section class="design dA" id="dA" aria-label="التصميم أ"></section>
+  <section class="design dD" id="dD" aria-label="التصميم د"></section>
+  <section class="design dA" id="dA" aria-label="التصميم أ" hidden></section>
   <section class="design dB" id="dB" aria-label="التصميم ب" hidden></section>
   <section class="design dC" id="dC" aria-label="التصميم ج" hidden></section>
 </main>
@@ -489,6 +566,39 @@ function renderC(){
   </div></footer>`;
 }
 
+// ---------- design D: C's layout in A's colours ----------
+function renderD(){
+  const item = (c,i,[n,u,p]) => `<div class="d-item"><span class="d-item-t">${esc(n)} <small>(${esc(u)})</small></span><span class="d-dots"></span>` +
+    (p==null ? `<a class="d-ask" href="${askLink(n)}" target="_blank" rel="noopener">حسب سعر اليوم</a>`
+             : `<span class="d-price">${p} ج</span><button class="d-add" data-add="${c}:${i}" aria-label="زوّدي ${esc(n)} للسلة">+</button>`) + `</div>`;
+  const offer = (o,k) => `<article class="d-offer"><h3>${esc(o.t)}</h3><div class="pr">${o.p} <small>جنيه</small></div><div>${esc(o.d)}</div>` +
+    (o.o ? `<ul>${o.o.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>` : '') + (o.ex ? `<div class="ex">${esc(o.ex)}</div>` : '') +
+    `<button class="d-btn red add-offer" data-offer="${k}">أضيفي العرض</button></article>`;
+  document.getElementById('dD').innerHTML = `
+  <div class="d-crim">
+    <div class="d-top"><div class="wrap"><div class="d-brand"><img src="img/logo.jpg" alt=""><div><b>مطبخ أميرة</b><small>AMIRA'S PLATE</small></div></div>
+      <nav class="d-nav"><a href="#d-menu">قائمة الطعام</a><a href="#d-offers">العروض</a><a href="#d-about">حكايتنا</a><a href="#d-foot">التوصيل</a></nav></div></div>
+    <div class="wrap d-hero"><div class="orn">✦ ✦ ✦</div><h2>أكل بيتي بطعم فاخر</h2>
+      <p>من مطبخ شيف أميرة لسفرتك: لحوم وفراخ متبلة جاهزة على التسوية، محاشي ملفوفة بالإيد، وصواني على أصولها.</p>
+      <div class="d-btns"><a class="d-btn" href="${waHello}" target="_blank" rel="noopener">اطلبي على واتساب</a><a class="d-btn alt" href="#d-menu">تصفّحي القائمة</a></div>
+      <div class="d-arch"><img src="img/mahshi.jpg" alt="محشي مشكل وورق عنب"></div></div>
+  </div>
+  <div class="d-band"><div class="wrap"><span>فراخ من محل دواجن طازة</span><span>لحمة بلدي ممتازة</span><span>تتبيلة شيف أميرة الخاصة</span><span>توصيل للبيت</span></div></div>
+  <div class="wrap">
+    <section class="d-sec" id="d-offers"><div class="d-title"><h2>العروض الدايمة</h2><p>تنويع على السفرة بسعر أوفر</p></div>
+      <div class="d-offers">${OFFERS.map(offer).join('')}</div></section>
+    <section class="d-sec" id="d-menu"><div class="d-title"><h2>قائمة الطعام</h2><p>الأسعار بالجنيه المصري</p></div>
+      <div class="d-menu"><div class="d-menu-cols">${MENU.map((m,ci)=>`<div class="d-cat"><div class="d-cat-h">${m.img?`<img src="${m.img}" alt="" loading="lazy">`:`<span class="noimg" aria-hidden="true">${m.icon}</span>`}<div><h3>${esc(m.name)}</h3>${m.sub?`<p>${esc(m.sub)}</p>`:''}</div></div>${m.items.map((it,i)=>item(ci,i,it)).join('')}</div>`).join('')}</div></div></section>
+    <section class="d-sec" id="d-about"><div class="d-about"><img src="img/logo.jpg" alt="شيف أميرة" loading="lazy">
+      <div><h2>حكاية مطبخ أميرة</h2><p>بنطبخ بحب وبنقدّم باهتمام. وصفات البيت المصري بتتعمل كل يوم بإيد شيف أميرة وبتتبيلتها الخاصة، وتوصلك فريش وجاهزة على التسوية.</p></div></div></section>
+  </div>
+  <footer class="d-crim d-foot" id="d-foot"><div class="wrap">
+    <div><h3>للطلب</h3><p>واتساب: <b dir="ltr">+20 101 544 1440</b></p><p><a href="https://www.instagram.com/amirasplate/" target="_blank" rel="noopener">إنستجرام</a> · <a href="https://www.facebook.com/profile.php?id=61564986495343" target="_blank" rel="noopener">فيسبوك</a></p></div>
+    <div><h3>التوصيل</h3><p>المناطق: <span class="ph">${PLACE.areas}</span></p><p>الرسوم: <span class="ph">${PLACE.fee}</span></p><p>اطلبي قبلها بـ: <span class="ph">${PLACE.notice}</span></p></div>
+    <div class="qrs"><figure><div class="qr-box" data-qr="wa"></div><figcaption>QR واتساب</figcaption></figure><figure><div class="qr-ph">QR الموقع<br>بعد حجز الدومين</div><figcaption>QR الموقع</figcaption></figure></div>
+  </div></footer>`;
+}
+
 function drawQRs(root){
   root.querySelectorAll('[data-qr="wa"]').forEach(el => {
     if (el.dataset.done || typeof QRCode === 'undefined') return;
@@ -543,19 +653,19 @@ document.getElementById('bkForm').addEventListener('input', refresh);
 document.getElementById('bkForm').addEventListener('submit', e => e.preventDefault());
 
 function show(d){
-  ['A','B','C'].forEach(x => { document.getElementById('d'+x).hidden = x !== d; });
+  ['A','B','C','D'].forEach(x => { document.getElementById('d'+x).hidden = x !== d; });
   document.querySelectorAll('[data-pick]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.pick === d)));
   document.body.dataset.d = d;
   drawQRs(document.getElementById('d'+d));
-  try { localStorage.setItem('ap-design', d); } catch(e) {}
+  try { localStorage.setItem('ap-design2', d); } catch(e) {}
   const top = document.querySelector('.chooser').offsetTop;
   if (window.scrollY > top) window.scrollTo({top});
 }
 
-renderA(); renderB(); renderC();
-let start = 'A';
+renderA(); renderB(); renderC(); renderD();
+let start = 'D';
 const h = (location.hash || '').replace('#','').toUpperCase();
-if (['A','B','C'].includes(h)) start = h; else { try { const s = localStorage.getItem('ap-design'); if (['A','B','C'].includes(s)) start = s; } catch(e) {} }
+if (['A','B','C','D'].includes(h)) start = h; else { try { const s = localStorage.getItem('ap-design2'); if (['A','B','C','D'].includes(s)) start = s; } catch(e) {} }
 show(start); refresh();
 </script>
 
